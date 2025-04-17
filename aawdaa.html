@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Ааваасаа Тусламж Гуйх Тоглоом</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #2e2e2e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background-image: url('https://i.ibb.co/YkDYRrB/like-station-bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+    }
+    .emoji {
+      font-size: 24px;
+    }
+    h1, p {
+      margin: 15px 0;
+    }
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .primary { background-color: #4caf50; color: #fff; }
+    .danger { background-color: #f44336; color: #fff; }
+    .neutral { background-color: #9e9e9e; color: #fff; }
+    .logo {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="game">
+    <div class="logo">🚗 ❤️ 🛞 LIKE STATION</div>
+    <h1>Сайн байна уу, ааваа? Хүү чинь хичээгээд явж байна шүү...</h1>
+    <button class="primary" onclick="nextStep(1)">ДАР</button>
+  </div>
+
+  <script>
+    function nextStep(step) {
+      const g = document.getElementById("game");
+      g.innerHTML = "";
+
+      if (step === 1) {
+        g.innerHTML = "<h1>Уучлаарай ААВАА, төлбөрөө хийхэд хэцүү байдалд орлоо 😢</h1>" +
+                      "<button class='primary' onclick='nextStep(2)'>ЯАГААД</button>" +
+                      "<button class='danger' onclick='nextStep(3)'>ХОХИНО</button>";
+      }
+
+      else if (step === 2) {
+        g.innerHTML = "<h1>Хичээлээ хийх хэрэгтэй байна...</h1>" +
+                      "<button class='primary' onclick='nextStep(5)'>ЗА</button>" +
+                      "<button class='neutral' onclick='nextStep(4)'>ГАРЧ АЖИЛАА ХИЙ</button>";
+      }
+
+      else if (step === 3) {
+        g.innerHTML = "<h1 class='emoji'>🙄🤦‍♂️😩</h1><h1>Ааваа... туслаач</h1>" +
+                      "<button class='primary' onclick='nextStep(5)'>ЗА</button>";
+      }
+
+      else if (step === 4) {
+        g.innerHTML = "<h1>Хичээлээ хийхгүй бол шалгалтандаа муу авна... бас баривчилгаа их байна! 😱</h1>" +
+                      "<button class='primary' onclick='nextStep(5)'>ЗА</button>";
+      }
+
+      else if (step === 5) {
+        g.innerHTML = "<h1>❤️ ХАЙРТАЙ ШҮҮ</h1><p>Тэгээд хэд хэрэгтэй юм?</p>" +
+                      "<button class='primary' onclick='nextStep(6)'>АСУУХ</button>";
+      }
+
+      else if (step === 6) {
+        g.innerHTML = "<h1>1,450,000 WON (~3,700,000₮)</h1>" +
+                      "<button class='neutral' onclick='nextStep(7)'>БОЛОМЖООРОО ТУСАЛЪЯ</button>" +
+                      "<button class='primary' onclick='nextStep(7)'>БҮГДИЙГ ӨГЧ ТУСАЛЪЯ</button>" +
+                      "<button class='danger' onclick='nextStep(7)'>ЧАДАХГҮЙ ЮМ БАЙНА</button>";
+      }
+
+      else if (step === 7) {
+        g.innerHTML = "<h1>ТӨГӨЛДӨР ТАНЬД ХАЙРТАЙ ШҮҮ. ҮРГЭЛЖ ДЭМЖДЭГТ БАЯРЛАЛАА ❤️</h1>" +
+                      "<p style='font-size:14px'>ТӨГӨЛДӨР ЛҮҮ ЮУ ГЭЖ ХАРИУЛСНАА, ЭНЭ ТОГЛООМЫН СЭТГЭЛТЭЙ ХАМТ ХЭЛЭЭРЭЙ 😊</p>" +
+                      "<button class='neutral' onclick='nextStep(8)'>ДУУСГАХ</button>";
+      }
+
+      else if (step === 8) {
+        g.innerHTML = "<h1>🎉 Тоглоом дууслаа! Баярлалаа! 🎉</h1>";
+      }
+    }
+  </script>
+</body>
+</html>
